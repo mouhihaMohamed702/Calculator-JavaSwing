@@ -11,5 +11,5 @@ public class calculator extends JFrame implements ActionListener {
     private JTextField consol;
     private double temp, temp1, result, a;
     private static double m1;
-    private int k = 1, x = 0, y = 0, z = 0;
-    private char operation;
+    
+    
