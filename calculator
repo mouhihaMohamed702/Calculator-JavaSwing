@@ -29,6 +29,7 @@ public class Calculator {
     private boolean go = true; // For calculate with Opt != (=)
     private boolean addWrite = true; // Racordé des Nombres dans l'Affichage
     private double val = 0; // Save value typed for calculation
-   
+    private boolean isToggleColorSelected = false;
+    private boolean isScientificMode = false;
 
     
