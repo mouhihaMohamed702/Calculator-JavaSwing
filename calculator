@@ -38,4 +38,14 @@ private Calculator() {
 
         // Button fonts
         Font btnFont = new Font("Comic Sans MS", Font.PLAIN, 28);
+         Font smallTxtBtnFont = new Font("Comic Sans MS", Font.PLAIN, 24);
+
+        btnSwitchThemes = new JButton();
+        btnSwitchThemes.setBounds(230, 30, 140, 18);
+        btnSwitchThemes.setText("Toggle colors");
+        btnSwitchThemes.setBackground(Color.GREEN.darker());
+        btnSwitchThemes.setForeground(Color.WHITE);
+        btnSwitchThemes.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnSwitchThemes.addActionListener(event -> onSwitchTheme());
+        window.add(btnSwitchThemes);
     
