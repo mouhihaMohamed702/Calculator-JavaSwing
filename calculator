@@ -31,5 +31,11 @@ public class Calculator {
     private double val = 0; // Save value typed for calculation
     private boolean isToggleColorSelected = false;
     private boolean isScientificMode = false;
+private Calculator() {
+        window = new JFrame("Calculator");
+        window.setSize(WINDOW_WIDTH, WINDOW_HEIGHT); // Set the width and the Height of the window
+        window.setLocationRelativeTo(null); // Move Window To Center
 
+        // Button fonts
+        Font btnFont = new Font("Comic Sans MS", Font.PLAIN, 28);
     
