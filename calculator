@@ -39,7 +39,6 @@ private Calculator() {
         // Button fonts
         Font btnFont = new Font("Comic Sans MS", Font.PLAIN, 28);
          Font smallTxtBtnFont = new Font("Comic Sans MS", Font.PLAIN, 24);
-
         btnSwitchThemes = new JButton();
         btnSwitchThemes.setBounds(230, 30, 140, 18);
         btnSwitchThemes.setText("Toggle colors");
@@ -48,4 +47,11 @@ private Calculator() {
         btnSwitchThemes.setCursor(new Cursor(Cursor.HAND_CURSOR));
         btnSwitchThemes.addActionListener(event -> onSwitchTheme());
         window.add(btnSwitchThemes);
-    
+        btnSwitchToScientificMode = new JButton();
+        btnSwitchToScientificMode.setBounds(30, 30, 140, 18);
+        btnSwitchToScientificMode.setText("Scientific Mode");
+        btnSwitchToScientificMode.setBackground(Color.BLUE.darker());
+        btnSwitchToScientificMode.setForeground(Color.WHITE);
+        btnSwitchToScientificMode.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnSwitchToScientificMode.addActionListener(event -> onShowScientificMode());
+        window.add(btnSwitchToScientificMode);
