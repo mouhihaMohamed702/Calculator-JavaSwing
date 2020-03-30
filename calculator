@@ -367,3 +367,42 @@ window.add(btn1);
             }
             go = true;
         });
+ window.add(btn3);
+
+        btnAdd = new JButton("+");
+        btnAdd.setBounds(x[3], y[4], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btnAdd.setFont(btnFont);
+        btnAdd.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnAdd.addActionListener(event -> {
+            repaintFont();
+            if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
+                if (go) {
+                    val = calc(val, inText.getText(), opt);
+                    if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(val))) {
+                        inText.setText(String.valueOf((int) val));
+                    } else {
+                        inText.setText(String.valueOf(val));
+                    }
+                    opt = '+';
+                    go = false;
+                    addWrite = false;
+                } else {
+                    opt = '+';
+                }
+        });
+        window.add(btnAdd);
+
+        btnPoint = new JButton(".");
+        btnPoint.setBounds(x[0], y[5], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btnPoint.setFont(new Font("Comic Sans MS", Font.BOLD, 32));
+        btnPoint.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnPoint.addActionListener(event -> {
+            repaintFont();
+            if (addWrite) {
+                inText.setText(inText.getText() + ".");
+            } else {
+                inText.setText("0.");
+                addWrite = true;
+            }
+            go = true;
+        });
