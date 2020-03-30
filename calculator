@@ -283,3 +283,47 @@ window.add(btn5);
             }
             go = true;
         });
+ window.add(btn6);
+
+        btnSub = new JButton("-");
+        btnSub.setBounds(x[3], y[3], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btnSub.setFont(btnFont);
+        btnSub.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnSub.addActionListener(event -> {
+            repaintFont();
+            if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
+                if (go) {
+                    val = calc(val, inText.getText(), opt);
+                    if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(val))) {
+                        inText.setText(String.valueOf((int) val));
+                    } else {
+                        inText.setText(String.valueOf(val));
+                    }
+
+                    opt = '-';
+                    go = false;
+                    addWrite = false;
+                } else {
+                    opt = '-';
+                }
+        });
+        window.add(btnSub);
+
+        btn1 = new JButton("1");
+        btn1.setBounds(x[0], y[4], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btn1.setFont(btnFont);
+        btn1.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btn1.addActionListener(event -> {
+            repaintFont();
+            if (addWrite) {
+                if (Pattern.matches("[0]*", inText.getText())) {
+                    inText.setText("1");
+                } else {
+                    inText.setText(inText.getText() + "1");
+                }
+            } else {
+                inText.setText("1");
+                addWrite = true;
+            }
+            go = true;
+        });
