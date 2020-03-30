@@ -55,3 +55,15 @@ private Calculator() {
         btnSwitchToScientificMode.setCursor(new Cursor(Cursor.HAND_CURSOR));
         btnSwitchToScientificMode.addActionListener(event -> onShowScientificMode());
         window.add(btnSwitchToScientificMode);
+        int j = -1;
+        int k = -1;
+        int[] x = {MARGIN_X, MARGIN_X + 90, 200, 290, 380};
+        int[] y = {MARGIN_Y, MARGIN_Y + 100, MARGIN_Y + 180, MARGIN_Y + 260, MARGIN_Y + 340, MARGIN_Y + 420};
+
+        inText = new JTextField("0");
+        inText.setBounds(x[0], y[0], 350, 70);
+        inText.setEditable(false);
+        inText.setBackground(Color.WHITE);
+        inText.setFont(new Font("Comic Sans MS", Font.PLAIN, 33));
+        window.add(inText);
+
