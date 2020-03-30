@@ -223,3 +223,43 @@ window.add(btn7);
                     opt = '*';
                 }
         });
+ window.add(btnMul);
+
+        btn4 = new JButton("4");
+        btn4.setBounds(x[0], y[3], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btn4.setFont(btnFont);
+        btn4.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btn4.addActionListener(event -> {
+            repaintFont();
+            if (addWrite) {
+                if (Pattern.matches("[0]*", inText.getText())) {
+                    inText.setText("4");
+                } else {
+                    inText.setText(inText.getText() + "4");
+                }
+            } else {
+                inText.setText("4");
+                addWrite = true;
+            }
+            go = true;
+        });
+        window.add(btn4);
+
+        btn5 = new JButton("5");
+        btn5.setBounds(x[1], y[3], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btn5.setFont(btnFont);
+        btn5.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btn5.addActionListener(event -> {
+            repaintFont();
+            if (addWrite) {
+                if (Pattern.matches("[0]*", inText.getText())) {
+                    inText.setText("5");
+                } else {
+                    inText.setText(inText.getText() + "5");
+                }
+            } else {
+                inText.setText("5");
+                addWrite = true;
+            }
+            go = true;
+        });
