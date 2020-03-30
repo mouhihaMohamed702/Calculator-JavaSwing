@@ -406,3 +406,61 @@ window.add(btn1);
             }
             go = true;
         });
+window.add(btnPoint);
+
+        btn0 = new JButton("0");
+        btn0.setBounds(x[1], y[5], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btn0.setFont(btnFont);
+        btn0.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btn0.addActionListener(event -> {
+            repaintFont();
+            if (addWrite) {
+                if (Pattern.matches("[0]*", inText.getText())) {
+                    inText.setText("0");
+                } else {
+                    inText.setText(inText.getText() + "0");
+                }
+            } else {
+                inText.setText("0");
+                addWrite = true;
+            }
+            go = true;
+        });
+        window.add(btn0);
+
+        btnEqual = new JButton("=");
+        btnEqual.setBounds(x[2], y[5], 2 * BUTTON_WIDTH + 10, BUTTON_HEIGHT);
+        btnEqual.setFont(btnFont);
+        btnEqual.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnEqual.addActionListener(event -> {
+            if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
+                if (go) {
+                    val = calc(val, inText.getText(), opt);
+                    if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(val))) {
+                        inText.setText(String.valueOf((int) val));
+                    } else {
+                        inText.setText(String.valueOf(val));
+                    }
+                    opt = '=';
+                    addWrite = false;
+                }
+        });
+        window.add(btnEqual);
+
+        btnRoot = new JButton("√");
+        btnRoot.setBounds(x[4], y[1], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btnRoot.setFont(btnFont);
+        btnRoot.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnRoot.addActionListener(event -> {
+            if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
+                if (go) {
+                    val = Math.sqrt(Double.parseDouble(inText.getText()));
+                    if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(val))) {
+                        inText.setText(String.valueOf((int) val));
+                    } else {
+                        inText.setText(String.valueOf(val));
+                    }
+                    opt = '√';
+                    addWrite = false;
+                }
+        });
