@@ -140,3 +140,23 @@ window.add(btnMod);
                     opt = '/';
                 }
         });
+window.add(btnDiv);
+
+        btn7 = new JButton("7");
+        btn7.setBounds(x[0], y[2], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btn7.setFont(btnFont);
+        btn7.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btn7.addActionListener(event -> {
+            repaintFont();
+            if (addWrite) {
+                if (Pattern.matches("[0]*", inText.getText())) {
+                    inText.setText("7");
+                } else {
+                    inText.setText(inText.getText() + "7");
+                }
+            } else {
+                inText.setText("7");
+                addWrite = true;
+            }
+            go = true;
+        });
