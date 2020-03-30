@@ -180,3 +180,23 @@ window.add(btn7);
             }
             go = true;
         });
+ window.add(btn8);
+
+        btn9 = new JButton("9");
+        btn9.setBounds(x[2], y[2], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btn9.setFont(btnFont);
+        btn9.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btn9.addActionListener(event -> {
+            repaintFont();
+            if (addWrite) {
+                if (Pattern.matches("[0]*", inText.getText())) {
+                    inText.setText("9");
+                } else {
+                    inText.setText(inText.getText() + "9");
+                }
+            } else {
+                inText.setText("9");
+                addWrite = true;
+            }
+            go = true;
+        });
