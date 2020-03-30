@@ -67,3 +67,13 @@ private Calculator() {
         inText.setFont(new Font("Comic Sans MS", Font.PLAIN, 33));
         window.add(inText);
 
+        btnC = new JButton("C");
+        btnC.setBounds(x[0], y[1], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btnC.setFont(btnFont);
+        btnC.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnC.addActionListener(event -> {
+            repaintFont();
+            inText.setText("0");
+            opt = ' ';
+            val = 0;
+        });
