@@ -327,3 +327,43 @@ window.add(btn5);
             }
             go = true;
         });
+window.add(btn1);
+
+        btn2 = new JButton("2");
+        btn2.setBounds(x[1], y[4], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btn2.setFont(btnFont);
+        btn2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btn2.addActionListener(event -> {
+            repaintFont();
+            if (addWrite) {
+                if (Pattern.matches("[0]*", inText.getText())) {
+                    inText.setText("2");
+                } else {
+                    inText.setText(inText.getText() + "2");
+                }
+            } else {
+                inText.setText("2");
+                addWrite = true;
+            }
+            go = true;
+        });
+        window.add(btn2);
+
+        btn3 = new JButton("3");
+        btn3.setBounds(x[2], y[4], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btn3.setFont(btnFont);
+        btn3.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btn3.addActionListener(event -> {
+            repaintFont();
+            if (addWrite) {
+                if (Pattern.matches("[0]*", inText.getText())) {
+                    inText.setText("3");
+                } else {
+                    inText.setText(inText.getText() + "3");
+                }
+            } else {
+                inText.setText("3");
+                addWrite = true;
+            }
+            go = true;
+        });
