@@ -160,3 +160,23 @@ window.add(btnDiv);
             }
             go = true;
         });
+window.add(btn7);
+
+        btn8 = new JButton("8");
+        btn8.setBounds(x[1], y[2], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btn8.setFont(btnFont);
+        btn8.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btn8.addActionListener(event -> {
+            repaintFont();
+            if (addWrite) {
+                if (Pattern.matches("[0]*", inText.getText())) {
+                    inText.setText("8");
+                } else {
+                    inText.setText(inText.getText() + "8");
+                }
+            } else {
+                inText.setText("8");
+                addWrite = true;
+            }
+            go = true;
+        });
