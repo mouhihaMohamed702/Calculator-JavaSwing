@@ -263,3 +263,23 @@ window.add(btn7);
             }
             go = true;
         });
+window.add(btn5);
+
+        btn6 = new JButton("6");
+        btn6.setBounds(x[2], y[3], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btn6.setFont(btnFont);
+        btn6.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btn6.addActionListener(event -> {
+            repaintFont();
+            if (addWrite) {
+                if (Pattern.matches("[0]*", inText.getText())) {
+                    inText.setText("6");
+                } else {
+                    inText.setText(inText.getText() + "6");
+                }
+            } else {
+                inText.setText("6");
+                addWrite = true;
+            }
+            go = true;
+        });
