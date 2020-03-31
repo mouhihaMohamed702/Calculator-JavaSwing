@@ -489,3 +489,31 @@ window.add(btnPoint);
                     opt = '^';
                 }
         });
+ btnPower.setVisible(false);
+        window.add(btnPower);
+
+        btnLog = new JButton("log");
+        btnLog.setBounds(x[4], y[3], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btnLog.setFont(smallTxtBtnFont);
+        btnLog.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnLog.addActionListener(event -> {
+            if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
+                if (go) {
+                    val = Math.log(Double.parseDouble(inText.getText()));
+                    if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(val))) {
+                        inText.setText(String.valueOf((int) val));
+                    } else {
+                        inText.setText(String.valueOf(val));
+                    }
+                    opt = 'l';
+                    addWrite = false;
+                }
+        });
+        btnLog.setVisible(false);
+        window.add(btnLog);
+
+        window.setLayout(null);
+        window.setResizable(false);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // If Click into The Red Button => End The Processus
+        window.setVisible(true);
+    }
