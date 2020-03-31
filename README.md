@@ -2,12 +2,6 @@
 
 Very basic calculator application created by Java **Swing**. 
 
-
-## Thank You !
-Please # Calculator App
-Very basic calculator application created by Java **Swing**. 
-
-
 ## Thank You !
 Please ⭐️ this repo and share it with others
 
