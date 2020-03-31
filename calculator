@@ -622,3 +622,23 @@ window.add(btnPoint);
             isToggleColorSelected = true;
         }
     }
+
+    private void onShowScientificMode() {
+        if (isScientificMode) {
+            window.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+            btnRoot.setVisible(false);
+            btnPower.setVisible(false);
+            btnLog.setVisible(false);
+            isScientificMode = false;
+        } else {
+            window.setSize(WINDOW_WIDTH + 80, WINDOW_HEIGHT);
+            btnRoot.setVisible(true);
+            btnPower.setVisible(true);
+            btnLog.setVisible(true);
+            isScientificMode = true;
+        }
+    }
+
+    public static void main(String[] args) {
+        new Calculator();
+    }
