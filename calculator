@@ -464,3 +464,28 @@ window.add(btnPoint);
                     addWrite = false;
                 }
         });
+
+        btnRoot.setVisible(false);
+        window.add(btnRoot);
+
+        btnPower = new JButton("pow");
+        btnPower.setBounds(x[4], y[2], BUTTON_WIDTH, BUTTON_HEIGHT);
+        btnPower.setFont(smallTxtBtnFont);
+        btnPower.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        btnPower.addActionListener(event -> {
+            repaintFont();
+            if (Pattern.matches("([-]?\\d+[.]\\d*)|(\\d+)", inText.getText()))
+                if (go) {
+                    val = calc(val, inText.getText(), opt);
+                    if (Pattern.matches("[-]?[\\d]+[.][0]*", String.valueOf(val))) {
+                        inText.setText(String.valueOf((int) val));
+                    } else {
+                        inText.setText(String.valueOf(val));
+                    }
+                    opt = '^';
+                    go = false;
+                    addWrite = false;
+                } else {
+                    opt = '^';
+                }
+        });
