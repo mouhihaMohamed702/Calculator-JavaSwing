@@ -517,3 +517,23 @@ window.add(btnPoint);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // If Click into The Red Button => End The Processus
         window.setVisible(true);
     }
+     private double calc(double x, String input, char opt) {
+        inText.setFont(inText.getFont().deriveFont(Font.BOLD));
+        double y = Double.parseDouble(input);
+        if (opt == '+') {
+            return x + y;
+        } else if (opt == '-') {
+            return x - y;
+        } else if (opt == '*') {
+            return x * y;
+        } else if (opt == '/') {
+            return x / y;
+        } else if (opt == '%') {
+            return x % y;
+        } else if (opt == '^') {
+            return Math.pow(x, y);
+        }
+        inText.setFont(inText.getFont().deriveFont(Font.PLAIN));
+        return y;
+    }
+
